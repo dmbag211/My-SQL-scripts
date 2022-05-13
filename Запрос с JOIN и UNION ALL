@@ -1,0 +1,15 @@
+Применение запроса с JOIN и UNION ALL для того чтобы отобразить в запросе сдедующую информацию по таблице Hamsters:
+ID, name, brithday, price, shop_name 
+SELECT c.id as id, c.name as name, c.birthday, c.price,
+    s.name as shop_name
+FROM Cats c 
+JOIN Shops s ON c.shop_id = s.id
+WHERE c.price IS NOT NULL
+  UNION ALL
+SELECT h.id as id, h.name as name, h.birthday, h.price,
+    s.name as shop_name
+FROM Hamsters h  
+JOIN Shops s ON h.shop_id = s.id
+WHERE h.price IS NOT NULL
+ORDER BY price;
+ 
