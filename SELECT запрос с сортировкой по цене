@@ -1,0 +1,6 @@
+// Пример простого SELECT запроса с сортировкой по увеличению цены:
+
+select c.id as Cats_ID,c.name as Cats_Name,c.price as Cats_Price
+from Cats c
+where price is not null
+order by price asc
