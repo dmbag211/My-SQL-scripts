@@ -1,0 +1,7 @@
+//Выполнение запроса SELECT к таблице Cats и Hamsters c применением JOIN и сортировкой цены в таблице Hamsters
+
+SELECT Cats.id as Cats_ID, Cats.name as Cats_Name, Cats.birthday as Cats_Birthday, Cats.price as Cats_Price, Hamsters.id as Hamsters_ID, Hamsters.name as Hamsters_Name, Hamsters.age as Hamsters_Age, Hamsters.gender  as Hamsters_Gender, Hamsters.price as Hamsters_Price 
+FROM Cats 
+JOIN Hamsters on Hamsters.shop_id = Cats.id 
+WHERE Cats.price IS NOT NULL
+ORDER BY Hamsters.price ASC
